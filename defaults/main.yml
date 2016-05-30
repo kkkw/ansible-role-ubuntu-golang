@@ -1,0 +1,3 @@
+---
+# defaults file for ansible-role-ubuntu-golang
+ubuntu_golang_path: /usr/local/go

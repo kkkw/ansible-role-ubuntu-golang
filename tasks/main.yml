@@ -1,0 +1,25 @@
+---
+# tasks file for ansible-role-ubuntu-golang
+- block:
+
+  - name: install golang
+    apt: name=golang state=latest
+
+  - name: make directory for golang path
+    file: path="{{ ubuntu_golang_path }}" mode=777 state=directory
+
+  become: True
+
+- name: get dependencies
+  command: go get github.com/Masterminds/glide
+  args:
+    creates: "{{ ubuntu_golang_path }}/src/github.com/Masterminds/glide"
+  environment:
+    GOPATH: "{{ ubuntu_golang_path }}"
+
+- name: install dependencies
+  command: go install github.com/Masterminds/glide
+  args:
+    creates: "{{ ubuntu_golang_path }}/bin/glide"
+  environment:
+    GOPATH: "{{ ubuntu_golang_path }}"
