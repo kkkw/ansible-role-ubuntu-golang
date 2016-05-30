@@ -1,3 +1,4 @@
 ---
 # defaults file for ansible-role-ubuntu-golang
 ubuntu_golang_path: /usr/local/go
+ubuntu_golang_version: '2:1.6-1ubuntu4'
