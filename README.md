@@ -1,4 +1,4 @@
-Role Name
+ansible-role-ubuntu-golang
 =========
 
 A brief description of the role goes here.
